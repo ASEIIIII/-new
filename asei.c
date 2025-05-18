@@ -145,7 +145,7 @@ int main(int argc, char* argv[]){
 
     int motif_num = load_motifs(argv[1]);
     int motif_len = strlen(motifs[0].seq);
-
+    
     int freq[4][MAXLEN];
     float score[4][MAXLEN];
 
