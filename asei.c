@@ -152,24 +152,6 @@ int main(int argc, char* argv[]){
     calc_freq_table(freq, motif_len, motif_num);
     calc_score_matrix(score, freq, motif_len, motif_num);
 
-    printf("塩基頻度表:\n");
-    for(int i = 0; i < 4; i++){
-        printf("%s: ", base_labels[i]);
-        for(int j = 0; j < motif_len; j++){
-            printf("%2d ", freq[i][j]);
-        }
-        printf("\n");
-    }
-
-    printf("\nスコア行列（log-odds）:\n");
-    for(int i = 0; i < 4; i++){
-        printf("%s: ", base_labels[i]);
-        for(int j = 0; j < motif_len; j++){
-            printf("%5.2f ", score[i][j]);
-        }
-        printf("\n");
-    }
-
     int promoter_count = load_promoters(argv[2]);
     search_binding_sites(promoter_count, motif_len, score);
 
