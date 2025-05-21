@@ -138,10 +138,6 @@ void search_binding_sites(int promoter_count, int motif_len, float score_matrix[
 }
 
 int main(int argc, char* argv[]){
-    if(argc < 3){
-        fprintf(stderr, "使い方: %s モチーフファイル プロモータファイル\n", argv[0]);
-        return 1;
-    }
 
     int motif_num = load_motifs(argv[1]);
     int motif_len = strlen(motifs[0].seq);
